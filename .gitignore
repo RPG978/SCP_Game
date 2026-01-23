@@ -1,0 +1,36 @@
+# Build directories
+Debug/
+Release/
+x64/
+x86/
+build/
+out/
+
+# Visual Studio files
+.vs/
+*.VC.db
+*.VC.opendb
+ipch/
+
+# Compiled objects
+*.obj
+*.o
+*.pdb
+*.idb
+*.tlog
+
+# Generated files
+*.log
+*.cache
+*.ilk
+
+# CMake (if you ever add it)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+
+# User-specific settings
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
