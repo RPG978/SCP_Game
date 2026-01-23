@@ -53,5 +53,6 @@ private:
     PuzzleEngine* puzzleEngine;
     DatabaseManager* db;
     CommandParser parser; // Parses raw player input into structured commands.
+    bool running = true;
 };
 

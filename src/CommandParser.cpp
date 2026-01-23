@@ -33,7 +33,7 @@ CommandParser::Command CommandParser::parse(const std::string& input) const {
 
     // right trim
     normalized.erase(
-        // gives reverse iterator
+        // finds the last non-space
         std::find_if(
             normalized.rbegin(), 
             normalized.rend(),
