@@ -6,12 +6,17 @@
  * @brief Converts raw player input into structured command data.
  *
  * Responsibilities:
+ * 
  *   - Normalize and tokenize player input
+ * 
  *   - Extract the command verb and optional argument
+ * 
  *   - Provide a simple interface for GameEngine to interpret commands
  *
  * Design Notes:
+ * 
  *   - Parsing is intentionally lightweight; complex logic belongs in GameEngine.
+ * 
  *   - Commands are returned as a simple struct for clarity and flexibility.
  */
 class CommandParser {

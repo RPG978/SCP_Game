@@ -7,23 +7,40 @@ CommandParser::Command CommandParser::parse(const std::string& input) const {
 
     // Make a lowercase copy of the input
     std::string normalized = input;
-    std::transform(normalized.begin(), normalized.end(), normalized.begin(),
-        [](unsigned char c) { return std::tolower(c); });
+    std::transform(
+        // start of input range
+        normalized.begin(), 
+        // end of input range
+        normalized.end(),
+        // start of output range
+        normalized.begin(),
+        // function to apply to each element
+        [](unsigned char c) { return std::tolower(c); }
+    );
 
     // Trim leading/trailing whitespace
     auto isSpace = [](unsigned char c) { return std::isspace(c); };
 
     // left trim
-    normalized.erase(normalized.begin(),
-        std::find_if(normalized.begin(), normalized.end(),
-            [&](char c) { return !isSpace(c); }));
+    normalized.erase(
+        normalized.begin(),
+        std::find_if(
+            normalized.begin(), 
+            normalized.end(),
+            [&](char c) { return !isSpace(c); }
+        )
+    );
 
     // right trim
     normalized.erase(
-        std::find_if(normalized.rbegin(), normalized.rend(),
-            [&](char c) { return !isSpace(c); })
-        .base(),
-        normalized.end());
+        // gives reverse iterator
+        std::find_if(
+            normalized.rbegin(), 
+            normalized.rend(),
+            [&](char c) { return !isSpace(c); }
+        ).base(), // gives a forward iterator after search
+        normalized.end()
+    );
 
     // Split into verb + argument
     std::istringstream iss(normalized);

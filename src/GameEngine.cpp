@@ -3,6 +3,7 @@
 #include "Room.h"
 #include "PuzzleEngine.h"
 #include "DatabaseManager.h"
+#include <iostream>
 
 GameEngine::GameEngine()
     : player(nullptr), puzzleEngine(nullptr), db(nullptr) {}
